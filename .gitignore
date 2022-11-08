@@ -1,0 +1,7 @@
+.idea
+/order-service/target
+/order-service/.mvn
+/spring-kafka-template-sample/target
+/spring-kafka-template-sample/.mvn
+/trade-service/target
+/trade-service/.mvn

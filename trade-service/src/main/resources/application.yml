@@ -1,0 +1,21 @@
+
+spring.application.name: trade-service
+
+spring.redis.database: 0
+spring.redis.host: localhost
+spring.redis.port: 6379
+spring.redis.timeout: 60000
+
+spring.kafka.bootstrap-servers: localhost:29092
+spring.cloud.stream.function.definition: orders;orderConsumer
+spring.cloud.stream.bindings.orders-in-0.destination: orders.buy
+spring.cloud.stream.bindings.orders-in-1.destination: orders.sell
+spring.cloud.stream.kafka.streams.binder.functions.orders.applicationId: orders
+
+spring.cloud.stream.bindings.orderConsumer-in-0.destination: orders.buy
+spring.cloud.stream.kafka.streams.binder.functions.orderConsumer.applicationId: orderConsumer
+
+spring.output.ansi.enabled: ALWAYS
+logging.pattern.console: "%clr(%d{HH:mm:ss.SSS}){blue} %clr(---){faint} %clr([%15.15t]){yellow} %clr(:){red} %clr(%m){faint}%n"
+
+management.endpoints.web.exposure.include: "*"
